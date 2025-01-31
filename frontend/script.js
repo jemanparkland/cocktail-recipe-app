@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ingredients = input.split(',').map(ingredient => ingredient.trim()).filter(Boolean);
 
         try {
-            const response = await fetch(`http://127.0.0.1:5000/search?ingredients=${ingredients.join(',')}`, {
+            const response = await fetch(`https://cocktail-recipe-app.onrender.com/search?ingredients=${ingredients.join(',')}`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' },
             });
