@@ -11,6 +11,11 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 # Correct path to the database
 DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'db', 'recipes.db'))
 
+# ✅ ADDING A ROOT ROUTE
+@app.route('/')
+def home():
+    return "Cocktail Recipe API is Running!", 200
+
 @app.route('/search', methods=['GET'])
 def search_cocktails():
     """
